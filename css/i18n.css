@@ -1,0 +1,119 @@
+.lang-switcher {
+    position: fixed;
+    left: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-top));
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 999px;
+    background: rgba(15, 18, 22, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.lang-flag-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 32px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.lang-flag-btn:hover {
+    transform: scale(1.06);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.lang-flag-btn:focus-visible {
+    outline: 2px solid #f2b50b;
+    outline-offset: 2px;
+}
+
+.lang-flag-btn.is-active {
+    border-color: #f2b50b;
+    box-shadow: 0 0 0 2px rgba(242, 181, 11, 0.25);
+}
+
+.lang-flag-btn:not(.is-active) {
+    opacity: 0.72;
+}
+
+.lang-flag-svg {
+    display: block;
+    width: 28px;
+    height: auto;
+    max-height: 19px;
+    pointer-events: none;
+}
+
+.lang-flag-btn--en .lang-flag-svg {
+    max-height: 14px;
+}
+
+.lang-toggle {
+    display: none;
+    z-index: 100;
+    position: static;
+    min-width: 48px;
+    height: 40px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 999px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #0f1216;
+    background: #f2b50b;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lang-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.lang-toggle:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .lang-switcher {
+        gap: 6px;
+        padding: 5px 6px;
+        flex-direction: column;
+    }
+
+    .lang-flag-btn {
+        width: 36px;
+        height: 28px;
+    }
+
+    .lang-flag-svg {
+        width: 24px;
+        max-height: 16px;
+    }
+
+    .lang-flag-btn--en .lang-flag-svg {
+        max-height: 12px;
+    }
+
+    .lang-toggle {
+        min-width: 44px;
+        height: 36px;
+        font-size: 13px;
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,140 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 100vh;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-top: 25vh;
+    margin-left: 10vw;
+}
+.contact-info a{
+    text-decoration: none;
+    background-color: #2f3338;  
+}
+.contact-info a:hover{
+    background-color: #F2B50B;
+    color: black;
+}
+.contact-info a{
+    color: white;
+    padding: 5px 2px;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+}
+.contact-info p>span{
+    width: 2px;
+    height: 2px;
+}
+.contact-infor p{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+}
+p {
+    font-size: 40px;
+}
+.platform-link a {
+    font-size: 30px;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 30px 0;
+}
+.nav-contact {
+   display: none;
+}
+.nav-home {
+    display: flex;
+    margin-top: 120px;
+    margin-right: 20px;
+}
+.nav-exp {
+   margin-left: -30px;
+}
+.tit{
+    top:5vh;
+}
+.tit b{
+    color: #F2B50B;
+}
+
+@media (max-width: 1024px) {
+    .contact-info {
+        margin-top: 18vh;
+        margin-left: max(16px, env(safe-area-inset-left));
+        margin-right: max(16px, env(safe-area-inset-right));
+        align-items: flex-start;
+        padding-bottom: 100px;
+    }
+
+    .contact-info p {
+        margin-left: 0 !important;
+    }
+
+    p {
+        font-size: clamp(18px, 4.5vw, 32px);
+    }
+
+    .platform-link a {
+        font-size: clamp(14px, 3.8vw, 22px);
+        word-break: break-word;
+    }
+
+    .tit {
+        left: max(16px, env(safe-area-inset-left));
+        right: 16px;
+        top: 12vh;
+    }
+
+    .tit b {
+        font-size: clamp(48px, 12vw, 120px);
+    }
+
+    .menu {
+        top: max(10px, env(safe-area-inset-top));
+        right: max(10px, env(safe-area-inset-right));
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .menu a {
+        width: min(120px, 28vw);
+        height: min(120px, 28vw);
+        font-size: clamp(13px, 3vw, 20px);
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        min-height: 100vh;
+    }
+    .nav-exp{
+        margin: 0
+    }
+    .nav-home{
+        margin: 0;
+    }
+    .tit{
+        margin: 10px 0;
+        padding: 0;
+        top: 0vh;
+    }
+    .contact-info{
+        margin: 10px 20px;
+    }
+    .platform-link a{
+        margin: 20px 0;
+        font-size: 20px;
+        padding: 0px !important;
+    }
+}
